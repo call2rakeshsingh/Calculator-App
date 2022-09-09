@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="screen and (min-width: 1000.001px)" href="style.css" />
+    <link rel="stylesheet" media="screen and (min-width: 500px) and (max-width: 1000px)" href="tablet.css" />
+    <link rel="stylesheet" media="screen and (max-width: 499.99px)" href="mobile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="mainContainer">
+    <h3>Calculator APP</h3>
+    <div id="calculatorBody">
+        <span id="brandName">CASIO</span>
+      <div id="displayCal">
+        <p id="displayPara">0</p>
+      </div>
+      <div id="numPad">
+        <div class="btn" id="1" onclick="forCal(this.id)">1</div>
+        <div class="btn" id="2" onclick="forCal(this.id)">2</div>
+        <div class="btn" id="3" onclick="forCal(this.id)">3</div>
+        <div class="btn" id="AC" onclick="forCal(this.id)">AC</div>
+        <div class="btn" id="4" onclick="forCal(this.id)">4</div>
+        <div class="btn" id="5" onclick="forCal(this.id)">5</div>
+        <div class="btn" id="6" onclick="forCal(this.id)">6</div>
+        <div class="btn" id="+" onclick="forCal(this.id)">+</div>
+        <div class="btn" id="7" onclick="forCal(this.id)">7</div>
+        <div class="btn" id="8" onclick="forCal(this.id)">8</div>
+        <div class="btn" id="9" onclick="forCal(this.id)">9</div>
+        <div class="btn" id="-" onclick="forCal(this.id)">-</div>
+        <div class="btn" id="." onclick="forCal(this.id)">.</div>
+        <div class="btn" id="0" onclick="forCal(this.id)">0</div>
+        <div class="btn" id="=" onclick="forCal(this.id)">=</div>
+        <div class="btn" id="*" onclick="forCal(this.id)">*</div>
+        <div class="btn" id="(" onclick="forCal(this.id)">(</div>
+        <div class="btn" id=")" onclick="forCal(this.id)">)</div>
+        <div class="btn" id="%" onclick="forCal(this.id)">%</div>
+        <div class="btn" id="/" onclick="forCal(this.id)">/</div>
+      </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
