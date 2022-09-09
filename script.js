@@ -1,72 +1,37 @@
 const displayPara = document.getElementById("displayPara");
+const forEqual = document.getElementById("forEqual");
 
-let calculationVar = [];
-let calculationSignVar = "";
+let calculationVar = 0;
 function forCal(control){
-    
-    if(control != "+" && control != "-" && control != "*" && control != "/" && control != "." && control != "=" && control != "(" && control != ")" && control != "%"){
-        calculationSignVar += control;
-        console.log("not +", control, control == "+");
-        
+
+
+    if(forEqual.checked == true && (control == "+" || control == "-" || control == "*" || control == "/" || control == "%")){
+        forEqual.checked = false;
     }
 
-    else if(control == "+" || control == "-" || control == "*" || control == "/" || control == "." || control == "(" || control != ")" || control == "%"){
-        calculationVar.push(calculationSignVar);    
-        calculationVar.push(control);
-        calculationSignVar = "";
-    }
+    if(control == "=" && forEqual.checked == true){
+        displayPara.innerText = eval(calculationVar);
+        forEqual.checked = false;
+    } 
 
     else if(control == "="){
-        calculationVar
+        displayPara.innerText = eval(calculationVar);
     }
-
     else if(control == "AC"){
-
+        calculationVar = 0;
+        displayPara.innerText = calculationVar; 
+        forEqual.checked = false;
     }
-
-    function showOnDisplay(){
-        let inVar="";
-        newVar = "";
-        calculationVar.forEach(function(element){
-            newVar += element;
-            });
-            if(control != "+" && control != "-" && control != "*" && control != "/" && control != "." && control != "=" && control != "(" && control != ")" && control != "%"){
-            y = displayPara.innerText = newVar + calculationSignVar;
-        } else if(control == "="){
-            // calculationVar.forEach(function(element){                
-            //     console.log(element+inVar);
-            //     inVar += element
-            //     });
-
-                for (let index = 0; index < calculationVar.length-1; index++) {
-                    
-                    if(index % 2 == 0){
-                    const element = calculationVar[index];
-                    
-                    inVar += Number.parseInt(element);
-                    displayPara.innerText = inVar;
-                    console.log(typeof inVar);
-               
-                    }
-                    else if(index % 2 == 1){
-                        const element = calculationVar[index];
-                        inVar += element;
-                        console.log(inVar,"inside else");
-                        
-                    }
-
-                    
-                }
-
-
+    else if(forEqual.checked == false){
+        if(displayPara.innerText == 0){
+            calculationVar = "";
+            calculationVar += control;
+            displayPara.innerText = calculationVar;   
+        } else{
+    calculationVar += control;
+    displayPara.innerText = calculationVar;    
         }
-            else{
-            x = displayPara.innerText = newVar;
-        }
-    }
-
-    showOnDisplay();
-    
+}
 }
 
 
